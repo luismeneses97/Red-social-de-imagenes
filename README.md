@@ -1,1 +1,1 @@
-# Proyecto_Red_Social
+# Proyecto_Red_Social_de_Imagenes
