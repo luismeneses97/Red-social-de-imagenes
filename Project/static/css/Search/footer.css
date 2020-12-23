@@ -1,0 +1,49 @@
+.arrowUp{
+    height: 10%;
+    top: 76%;
+    z-index: 80;
+    right: 0px;
+    position: fixed;
+    opacity: 50%;
+}
+.arrowUp:hover{
+    opacity: 100%;
+}
+.arrowIcon{
+    width: 50px;
+}
+
+.content-paginator{
+    text-align: center;
+}
+.page-item.active a{
+    background-color: #000 !important;
+    color: #FFF !important;
+}
+.page-item a{
+    color: #000 !important;
+    font-weight: 630 !important;
+    font-size: 16px;
+}
+
+.footer{
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+.footer-in{
+    bottom: 0px;
+    height: 50px;
+    background-color: #000;
+    color: #fff
+}
+.footer-down{
+    height: 40px;
+    background-color: #fff;
+    color: #000
+}
+.text-center{
+    font-weight: 600;
+    font-size: 14px;
+}

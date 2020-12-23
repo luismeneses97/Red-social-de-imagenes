@@ -1,0 +1,46 @@
+.image{
+    margin-top: 20px;
+    width: 100%;
+}
+.text{
+    padding-right: 15px;
+    font-weight: normal;
+    text-align: justify;
+}
+.voteIcon1{
+    cursor: pointer;
+    width: 4%;
+}
+.downloadIcon1{
+    cursor: pointer;
+    width: 4%;
+}
+.row1{
+    border: 1px solid lightgray;
+    margin-left:10% !important;
+    margin-right:10% !important;
+}
+.row2{
+    border: 1px solid lightgray;
+    margin-left:20% !important;
+    margin-right:20% !important;
+}
+.content{
+    display: flex;
+}
+.card-showImage{
+    margin-top: 80px !important;
+}
+.description-title, .autor-title{
+    text-align: left !important;
+    margin: 20px 0 !important;
+}
+.card-footer{
+    text-align: right;
+}
+.textForget{
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}

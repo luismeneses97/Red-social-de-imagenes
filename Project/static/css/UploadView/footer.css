@@ -1,0 +1,35 @@
+.arrowUp{
+    height: 10%;
+    top: 76%;
+    z-index: 80;
+    right: 0px;
+    position: fixed;
+    opacity: 50%;
+}
+.arrowUp:hover{
+    opacity: 100%;
+}
+.arrowIcon{
+    width: 50px;
+}
+.footer{
+    margin-top: 8%;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+.footer-in{
+    height: 50px;
+    background-color: #000;
+    color: #fff
+}
+.footer-down{
+    height: 40px;
+    background-color: #fff;
+    color: #000
+}
+.text-center{
+    font-weight: 600;
+    font-size: 14px;
+}

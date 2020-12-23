@@ -1,0 +1,114 @@
+{% extends "layouts/base.html"%}
+{% block title %}Buscar{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../../static/css/Search/gallery.css">
+<link rel="stylesheet" href="../../static/css/Search/navbar.css">
+<link rel="stylesheet" href="../../static/css/Search/footer.css">
+{% endblock %}
+{% block body %}
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #9f9f9f !important;">
+    <div class="col-md-1">
+        <a class="navbar-brand" href="{{url_for('index')}}"><img class="logo-navbar" src="../../static/images/Logo.png"
+                alt="logo"></a>
+    </div>
+
+    <div class="col-md-9">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="input-group md-form form-sm form-2" style="width: 100%;">
+                <form method="POST" action="{{url_for('search_image')}}" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-md-10 text-input">
+                            <input class="form-control gray-border" type="text" placeholder="Ingresa una palabra clave"
+                                aria-label="Search" name="text" style="width: 100%;" required>
+                        </div>
+                        <div class="col-md-2 button-input">
+                            <button type="submit" class="btn btn-light" id="logoSearch-btn"><img
+                                    src="../../static/icons/search.svg" alt="logoSearch"
+                                    class="logoSearch"><b>Buscar</b></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <ul class="navbar-nav ml-auto">
+            {% if session.username %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('in_session')}}"><b>Hola, {{session.username}}</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('log_out')}}"><b>Cerrar sesión</b></a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('register')}}"><b>Regístrate</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('login')}}"><b class="login">Inicia sesión</b></a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<nav>
+    <div class="nav-underline shadow  mb-5 bg-white ">
+        <ul class="nav justify-content-center secondaryNavBar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('index')}}"><b>Inicio</b></a>
+                <div class="underline-active-bar"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('most_voted')}}"><b>Más votadas</b></a>
+                <div class="underline-inactive-bar"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('most_downloaded')}}"><b>Más descargadas</b></a>
+                <div class="underline-inactive-bar"></div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- End navBar -->
+<div class="container">
+    {% include 'layouts/_messages.html' %}
+</div>
+<div class="row">
+    {% for image in images %}
+    <div class="columnLeft col-md-4">
+        <div class="container">
+            <form method="GET" action="{{url_for('showImage', id=image[0])}}">
+                <button type="submit" class="hide"><img src="../../static/uploader/{{image[4]}}" alt="{{image[1]}}"
+                        class="imageLong"></button>
+            </form>
+            <div class="overlay">
+                <div class="textAuth">{{image[5]}}</div>
+                <div class="icons">
+                    <img src="../../static/icons/heartWhite.svg" alt="heart" class="voteIcon">
+                    <p class="textVote">{{image[2]}}</p>
+                    <img src="../../static/icons/download.svg" alt="download" class="downloadIcon">
+                    <p class="textDownload">{{image[3]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="text-center footer-in py-3">
+        <div class="text-center">Términos y condiciones <span class="mx-4"></span>Políticas de privacidad</span>
+        </div>
+    </div>
+    <div class="text-center footer-down py-2">
+        <div class="text-center">© 2020 PHOTOS . Todos los derechos reservados . Diseñado por Grupo E</div>
+    </div>
+</div>
+<!-- end Footer -->
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}

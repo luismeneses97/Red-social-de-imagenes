@@ -1,0 +1,23 @@
+.image{
+    margin-top: 20px;
+    width: 100%;
+}
+.text{
+    padding-right: 15px;
+    font-weight: normal;
+    text-align: justify;
+}
+.voteIcon1{
+    cursor: pointer;
+    width: 7%;
+}
+.downloadIcon1{
+    cursor: pointer;
+    width: 7%;
+}
+.row1{
+    border: solid;
+}
+.content{
+    display: flex;
+}

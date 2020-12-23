@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+.alert{
+    text-align: center !important;
+}  
+.row{
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 0px;
+}
+.columnLeft{
+    padding: 10px;
+}
+.columnCenter{
+    padding: 10px;
+}
+.columnRight{
+    padding: 10px;
+}
+.imageLong{
+    margin-top: 20px;
+    width: 100%;
+    height: 600px;
+}
+.imageShort{
+    margin-top: 20px;
+    width: 100%;
+    height: 290px;
+}
+.container {
+    position: relative;
+    padding: 0px;
+    /* border: solid; */
+}
+.overlayButton{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6786064767703957) 38%, rgba(0,0,0,0.19121151878720233) 100%);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+.container:hover .overlayButton {
+    height: 45px;
+}
+.overlayTop{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+.container:hover .overlayTop {
+    height: 45px;
+}
+.textAuth {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 11%;
+    left: 5%;
+}
+.textVote {
+    color: #FFF;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+.voteIcon{
+    position: absolute;
+    top: 25%;
+    right: 26%;
+    width: 7%;
+}
+.textDownload {
+    color: #FFF;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+.downloadIcon{
+    position: absolute;
+    top: 22%;
+    right: 12%;
+    width: 6%;
+}

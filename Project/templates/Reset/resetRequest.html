@@ -1,0 +1,64 @@
+{% extends "layouts/base.html"%}
+
+{% block title %}Restablecer contraseña{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../../static/css/ResetPassword/resetView.css">
+<link rel="stylesheet" href="../../static/css/ResetPassword/footer.css">
+<link rel="stylesheet" href="../../static/css/Search/card.css">
+{% endblock %}
+{% block body %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " style="background-color: #9f9f9f !important;">
+        <div class="col-md-1">
+            <a class="navbar-brand" href="{{url_for('index')}}"><img class="logo-navbar"
+                    src="../../static/images/Logo.png" alt="logo"></a>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-3"></div>
+    </nav>
+</header>
+
+<div class="card-showImage">
+    <div class="row2">
+        <div class="card text-center">
+            <div class="card-header">
+                <h2>Recupera tu contraseña</h2>
+            </div>
+            <div class="card-body">
+                <div class="content">
+                    <div class="col-md-12">
+
+                        <div class="col-md-12">
+                            <p class="message">Ingresa aquí tu correo para buscar tu usuario y enviarte un correo de
+                                recuperación de
+                                contraseña:</p>
+                            <br>
+                            {%from "layouts/_macro.html" import render_field%}
+                            <form method="POST" action="" id="form" onsubmit="return validate()">
+                                {{render_field(form.email, class_="form-control inputMail", placeholder="Dirección de correo eléctronico", id="mail")}}
+                                <div class="alert alert-danger" id="mailerror" hidden></div>
+                                <br>
+                                <input type="submit" class="btn btn-lg restart-btn" value="Enviar" id="submit">
+                            </form>
+                            <br>
+                            <a href="{{url_for('login')}}" class="textForget">Ya recordé mi contraseña</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="text-center footer-in py-3">
+            <div class="text-center">Términos y condiciones <span class="mx-4"></span>Políticas de privacidad</span>
+            </div>
+        </div>
+        <div class="text-center footer-down py-2">
+            <div class="text-center">© 2020 PHOTOS . Todos los derechos reservados . Diseñado por Grupo E</div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block scripts %}
+    <script src='../../static/js/resetRequest.js'></script>
+    {% endblock %}

@@ -1,0 +1,34 @@
+.col-md-12{
+    padding: 10%;
+}
+.inputUser{
+    text-align: center;
+    height: 50px;
+}
+.inputPasswd{
+    text-align: center;
+    height: 50px;
+}
+.title{
+    cursor: default;
+    text-align: center;
+}
+.textForget{
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    margin-left: 33%;
+    text-decoration: underline;
+}
+.voteIcon{
+    width: 7%;
+}
+.downloadIcon{
+    width: 7%;
+}
+.btnSingUp{
+    margin-left: 30%;
+    color: black;
+    font-size: 25px;
+    background-color: #A6C4FE;
+}

@@ -1,0 +1,70 @@
+{% extends "layouts/base.html"%}
+
+{% block title %}Inicia Sesión{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../../static/css/SingIn/form.css">
+<link rel="stylesheet" href="../../static/css/SingIn/navbar.css">
+<link rel="stylesheet" href="../../static/css/SingIn/footer.css">
+{% endblock %}
+{% block body %}
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light " style="background-color: #9f9f9f !important;">
+    <div class="col-md-1">
+        <a class="navbar-brand" href="{{url_for('index')}}"><img class="logo-navbar"
+                src="../../static/images/Logo.png" alt="logo"></a>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-3">
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto"></ul>
+            <span class="navbar-text active">
+                <a class="nav-link" href="{{url_for('register')}}"><b>¿No tienes una cuenta?</b></a>
+            </span>
+        </div>
+    </div>
+</nav> 
+<!-- End nabvar -->
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="container">
+            <h1 class="titleRegister">Bienvenido de nuevo a PHOTOS</h1>
+            <h2 class="subtitle">Descarga fotos gratis y disfruta tu <br> experiencia PHOTOS</h2>
+            <div class="forms">
+                {% include 'layouts/_messages.html' %}
+                {%from "layouts/_macro.html" import render_field%}
+                <form method="POST" action="" id="form" onsubmit="return changes()">
+                    {{render_field(form.user, class_="singIn-btn1 form-control", placeholder="Usuario", id="user")}}
+                    <div class="alert alert-danger" id="usererror" hidden></div>
+                    {{render_field(form.password, class_="singIn-btn1 form-control", placeholder="Contraseña", id="password")}}
+                    <div class="alert alert-danger" id="passworderror" hidden></div>
+                    <input type="submit" class="btn singIn-btn form-control" value="Iniciar sesión" id="submitBtn">
+                </form>
+            </div>
+            <br>
+            <br> 
+            <a href="{{url_for('resetRequest')}}" class="textForget">Olvidé mi contraseña</a>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <img src="../../static/images/decotation.JPG" alt="imagen0" class="image">
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <div class="text-center footer-in py-3">
+        <div class="text-center">Términos y condiciones <span class="mx-4"></span>Políticas de privacidad</span>
+        </div>
+    </div>
+    <div class="text-center footer-down py-2">
+        <div class="text-center">© 2020 PHOTOS . Todos los derechos reservados . Diseñado por Grupo E</div>
+    </div>
+</div>
+<!-- end footer -->
+
+{% endblock %}
+{% block scripts %}
+<script src='../../static/js/login.js'></script>
+{% endblock %}

@@ -1,0 +1,41 @@
+nav {
+    background-color: #9f9f9f;
+    height: 75px;
+}
+.row{
+    margin-right: 0px;
+}
+.logo-navbar {
+    width: 100%;
+}
+.titleRestart{
+    cursor: default;
+    padding: 8%;
+    text-align: center;
+}
+h1{
+    cursor: default;
+    font-weight: bolder;
+}
+.subtitulo{ 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#a6c4fe;
+    font-size: 130%;  
+}
+.restart-btn{
+    background-color:#a6c4fe;
+    font-weight: 600;
+}
+.form-control{
+    margin-bottom: 20px;
+}
+.restart-content{
+    text-align: center;
+}
+.container-form{
+    border: 1px solid gray;
+    border-radius: 1%;
+    padding: 0 10% 8% 10%;
+    margin-top: 5%;
+}

@@ -1,0 +1,87 @@
+{% extends "layouts/base.html"%}
+{% block title %}Nueva imagen{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../../static/css/UploadView/navbar.css">
+<link rel="stylesheet" href="../../static/css/UploadView/form.css">
+<link rel="stylesheet" href="../../static/css/UploadView/footer.css">
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #9f9f9f !important;">
+  <div class="col-md-1">
+    <a class="navbar-brand" href="{{url_for('index')}}"><img class="logo-navbar" src="../../static/images/Logo.png"
+        alt="logo"></a>
+  </div>
+  <div class="col-md-9"></div>
+  <div class="col-md-3">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('in_session')}}"><b>Hola, {{session.username}}</b></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('log_out')}}"><b>Cerrar sesión</b></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav>
+  <div class="nav-underline shadow  mb-5 bg-white ">
+    <ul class="nav justify-content-center secondaryNavBar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('in_session')}}"><img src="../../static/icons/images.svg" alt="logoSearch"
+            class="logoSearch"><b>Mis imágenes</b></a>
+        <div class="underline-inactive-bar"></div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('upload')}}"><img src="../../static/icons/load.svg" alt="logoSearch"
+            class="logoSearch"><b>Cargar imagen</b></a>
+        <div class="underline-active-bar"></div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('update')}}"><img src="../../static/icons/update.svg" alt="logoSearch"
+            class="logoSearch"><b>Actualizar imagen</b></a>
+        <div class="underline-inactive-bar"></div>
+      </li>
+    </ul>
+  </div>
+</nav>
+{%from "layouts/_macro.html" import render_field%}
+<form method="POST" enctype="multipart/form-data" action="" id="form" onsubmit="return changes()">
+  <div class="uploadForm">
+    <div class="containerImage">
+      <img id="preview" class="uploadImage" src="../../static/images/newImage.JPG">
+      <input name="file" id="file" type="file" accept="image/jpeg,image/png" class="buttonImage">
+    </div>
+    <div class="containerForms">
+      <label for="name">Nombre</label>
+      {{render_field(form.title, class_="singIn-btn1 form-control", placeholder="Nombre de la imagen", id="name")}}
+      <div class="alert alert-danger" id="nameerror" hidden></div>
+      <br>
+      <label for="description">Descripción</label>
+      <br>
+      {{render_field(form.description, class_="form-control textarea", placeholder="Descripción", rows="8", id="description")}}
+      <div class="alert alert-danger" id="descriptionerror" hidden></div>
+      <br>
+      <label for="status">Estado de visibilidad</label>
+      <br>
+      <div class="row">
+        {{render_field(form.status, id="switch", class_="check")}}
+        <label id="statusImag" class="label">Privado</label>
+      </div>
+      <input type="submit" class="btn btnUpload" value="Cargar imagen" id="submitBtn">
+      <a type="button" class="btn  btnCancel" href="{{url_for('in_session')}}">Cancelar proceso</a>
+</form>
+</div>
+</div>
+<div class="footer">
+  <div class="text-center footer-in py-3">
+    <div class="text-center">Términos y condiciones <span class="mx-4"></span>Políticas de privacidad</span>
+    </div>
+  </div>
+  <div class="text-center footer-down py-2">
+    <div class="text-center">© 2020 PHOTOS . Todos los derechos reservados . Diseñado por Grupo E</div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="../../static/js/upload.js"></script>
+{% endblock %}

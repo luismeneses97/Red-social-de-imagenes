@@ -1,0 +1,38 @@
+.col-md-12{
+    padding: 10%;
+}
+.inputMail{
+    text-align: center;
+    height: 50px;
+}
+.titleRestart{
+    cursor: default;
+    margin-left: 20%;
+    text-align: center;
+}
+.message{
+    cursor: default;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+.textRemember{
+    cursor: pointer;
+    color: black;
+    margin-left: 36%;
+}
+.voteIcon{
+    width: 7%;
+}
+.downloadIcon{
+    width: 7%;
+}
+.btnSend{
+    margin-left: 42%;
+    color: black;
+    font-size: 25px;
+    background-color: #A6C4FE;
+}
+.modal-body{
+    padding: 0px !important;
+}

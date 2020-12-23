@@ -1,0 +1,65 @@
+.row{
+    margin-right: 0px;
+}
+.alert{
+    text-align: center !important;
+}
+.col-md-7{
+    padding-right: 0px;
+}
+.image{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10%;
+}
+.forms{
+    margin-top: 10%;
+}
+h1{
+    font-size: 300%;
+}
+.titleRegister{
+    text-align: center;
+}
+.subtitle{
+    text-align: center;
+    /* border: solid; */
+    color:#a6c4fe;
+    font-size: 130%;  
+}
+input{
+    text-align: center;
+    margin: center;
+    font-weight: bold;
+}
+h3{
+    font-size: 80%
+}
+.singIn-btn{
+    background-color: #a6c4fe !important;
+    font-weight: bold !important;
+    font-size: 120%;
+}
+.singIn-btn1{
+    padding: 5%;
+    font-weight: bold !important;
+    background-color: #f6f5f5 !important;
+}
+.note{
+    text-align: center;
+    color: #7f7f7f ;
+}
+#Nombre{
+    background-color: blue;
+}
+.textForget{
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    margin-left: 33%;
+    text-decoration: underline;
+}
